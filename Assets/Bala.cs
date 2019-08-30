@@ -6,21 +6,23 @@ public class Bala : MonoBehaviour
 {
     public int vel_bala = 12;
 
-    float startTime;
+    float destroyTime = 10;
     private void Start()
     {
-        startTime = Time.time;
+        Destroy(gameObject, destroyTime);
     }
     void Update()
     {
         transform.position += Vector3.right * vel_bala * Time.deltaTime;
-        if (Time.time - startTime >= 10)
-            Destroy(gameObject);
 
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "nimigo")
             Destroy(gameObject);
+    }
+    public void SetDirection(int dir)
+    {
+        vel_bala = vel_bala * dir;
     }
 }

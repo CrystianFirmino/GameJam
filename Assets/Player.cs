@@ -5,10 +5,11 @@ public class Player : MonoBehaviour
     public int vida = 5;
     float balaTime;
     private Rigidbody2D heroi;
-    private BoxCollider2D col;
+    //private BoxCollider2D col;
     public int vel = 3;
-    public bool mov = false;
-    public bool agc = false;
+    public bool mov = false; //<-------------- Movimento
+    public bool agc = false; //<-------------- Agachado
+    public bool pol = false; //<-------------- Pulando
     public GameObject bullet;
     public int force = 320;
 
@@ -17,22 +18,24 @@ public class Player : MonoBehaviour
     Vector3 scale;
     bool isGround = false;
 
-    private Animator anin;
+    private Animator anin; //<--------------
     private void Start()
     {
         heroi = GetComponent<Rigidbody2D>();
-        col = GetComponent<BoxCollider2D>();
+        //col = GetComponent<BoxCollider2D>();
         scale = transform.localScale;
-        anin = GetComponent<Animator>();
+        anin = GetComponent<Animator>();//<--------------
     }
     
     public void Update()
     {
-        anin.SetBool("mov", mov);
-        anin.SetBool("agc", agc);
-        agc = false;
-        mov = false;
-        
+        anin.SetBool("mov", mov); //<--------------
+        anin.SetBool("agc", agc); //<--------------
+        anin.SetBool("pul", pol); //<--------------
+        agc = false; //<--------------
+        mov = false; //<--------------
+        pol = false; //<--------------
+
         if (Input.GetKey(KeyCode.DownArrow))
             Agachar();
         else
@@ -40,6 +43,8 @@ public class Player : MonoBehaviour
             transform.localScale = scale;
             if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
                 Jump();
+            if(!isGround)
+                pol = true;
             if (Input.GetKeyDown(KeyCode.Space) & Time.time - balaTime >= 1)
                 Attack();
             if (Input.GetKey(KeyCode.LeftArrow))
@@ -77,26 +82,30 @@ public class Player : MonoBehaviour
     public void MoveRight()
     {
         //ir para bolsonaro
-        mov = true;
+        mov = true; //<--------------
         transform.position += Vector3.right * vel * Time.deltaTime;
     }
     public void MoveLeft()
     {
         //ir para haddad
-        mov = true;
+        mov = true; //<--------------
         transform.position += Vector3.left* vel * Time.deltaTime;
     }
     public void Jump()
     {
         //eu quero ir pra frente
+        
         heroi.AddForce(new Vector3(0,1,0) * force);
     }
     public void Agachar()
     {
         //eu quero ir pra frente
-        agc = true;
+        agc = true; //<--------------
+
+        //Falta diminuir a Box Collider
+
         //transform.localScale = scale /2;
-        
+
     }
     public void Attack()
     {

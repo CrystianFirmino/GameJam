@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3082945306725238342}
   - component: {fileID: 3082945306725238337}
   - component: {fileID: 3082945306725238336}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Inimigo2
   m_TagString: nimigo
   m_Icon: {fileID: 0}
