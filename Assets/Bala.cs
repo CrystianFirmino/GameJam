@@ -14,7 +14,7 @@ public class Bala : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.right * vel_bala * Time.deltaTime;
-        if (Time.time - startTime >=10)
+        if (Time.time - startTime >= 10)
             Destroy(gameObject);
 
     }

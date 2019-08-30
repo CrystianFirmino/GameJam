@@ -6,21 +6,17 @@ using UnityEngine;
 
 public class Arquiinimigo : MonoBehaviour
 {
+    public int vida = 10;
     int count = 0;
 
     float balaTime;
     public GameObject bullet;
 
-    void Start()
-    {
-
-    }
-
     void Update()
     {
-        if (count >= 3)
+        if (count >= vida)
             Destroy(gameObject);
-        if (Random.Range(0, 100) == 2 & Time.time - balaTime >= 1 / 2)
+        if (Random.Range(0, 50) == 2 & Time.time - balaTime >= 1 / 2)
             Attack();
     }
 
