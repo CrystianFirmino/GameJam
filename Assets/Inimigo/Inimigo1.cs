@@ -7,6 +7,7 @@ public class Inimigo1 : MonoBehaviour
     public int vida = 3;
     public int freqTiros = 100;
     public GameObject bullet;
+    public GameObject player;
 
     int hitCount = 0;
 
@@ -14,12 +15,15 @@ public class Inimigo1 : MonoBehaviour
 
     void Update()
     {
-        if (hitCount >= vida)
-            Destroy(gameObject);
-        if (Random.Range(0, freqTiros) == 2 & Time.time - balaTime >= 1)
-            AttackL();
-        else if (Random.Range(0, freqTiros) == 4 & Time.time - balaTime >= 1)
-            AttackH();
+        if (transform.position.x - player.transform.position.x < 20)
+        {
+            if (hitCount >= vida)
+                Destroy(gameObject);
+            if (Random.Range(0, freqTiros) == 2 & Time.time - balaTime >= 1)
+                AttackL();
+            else if (Random.Range(0, freqTiros) == 4 & Time.time - balaTime >= 1)
+                AttackH();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

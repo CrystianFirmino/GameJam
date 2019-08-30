@@ -100,6 +100,16 @@ PrefabInstance:
       propertyPath: vel_bala
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 6736556969360827932, guid: 6cc2c601b77c6534e8d12d3381f0a915,
+        type: 3}
+      propertyPath: m_Simulated
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6736556969360827932, guid: 6cc2c601b77c6534e8d12d3381f0a915,
+        type: 3}
+      propertyPath: m_Mass
+      value: 0.0001
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6183065907259212562, guid: 6cc2c601b77c6534e8d12d3381f0a915, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 6cc2c601b77c6534e8d12d3381f0a915, type: 3}

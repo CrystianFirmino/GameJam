@@ -593,6 +593,7 @@ PlayerSettings:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
   cloudServicesEnabled:
+    Collab: 1
     UNet: 1
   luminIcon:
     m_Name: 
@@ -613,10 +614,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: 558bcf51-eef3-4930-8b43-35ec044c0664
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: GameJam
+  organizationId: bdcc010-a0a3-4a7b-97e7-2322d7ee2f92
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

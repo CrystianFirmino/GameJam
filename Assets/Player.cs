@@ -54,7 +54,7 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.tag == "nimigo")
         {
-            hitCount += 5;
+            hitCount += 1;
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
@@ -86,6 +86,7 @@ public class Player : MonoBehaviour
     {
         
         //eu quero ir pra frente
+
         transform.localScale = scale /2;
     }
     public void Attack()
