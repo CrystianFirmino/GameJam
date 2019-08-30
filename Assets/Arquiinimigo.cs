@@ -34,13 +34,13 @@ public class Arquiinimigo : MonoBehaviour
     public void AttackL()
     {
         //atack
-        Instantiate(bullet, transform.position + (Vector3.left) + (Vector3.down* 4/5), Quaternion.identity);
+        Instantiate(bullet, transform.position + (Vector3.left) + (Vector3.down* 4/6), Quaternion.identity);
         balaTime = Time.time;
     }
     public void AttackH()
     {
         //atack
-        Instantiate(bullet, transform.position + (Vector3.left) + (Vector3.up), Quaternion.identity);
+        Instantiate(bullet, transform.position + (Vector3.left) + (Vector3.up*4/6), Quaternion.identity);
         balaTime = Time.time;
 
     }
