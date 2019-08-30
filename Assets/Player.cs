@@ -5,8 +5,10 @@ public class Player : MonoBehaviour
     public int vida = 5;
     float balaTime;
     private Rigidbody2D heroi;
+    private BoxCollider2D col;
     public int vel = 3;
     public bool mov = false;
+    public bool agc = false;
     public GameObject bullet;
     public int force = 320;
 
@@ -19,6 +21,7 @@ public class Player : MonoBehaviour
     private void Start()
     {
         heroi = GetComponent<Rigidbody2D>();
+        col = GetComponent<BoxCollider2D>();
         scale = transform.localScale;
         anin = GetComponent<Animator>();
     }
@@ -26,11 +29,10 @@ public class Player : MonoBehaviour
     public void Update()
     {
         anin.SetBool("mov", mov);
+        anin.SetBool("agc", agc);
+        agc = false;
         mov = false;
-        if (Input.GetKey(KeyCode.LeftArrow))
-            MoveLeft();
-        if (Input.GetKey(KeyCode.RightArrow))
-            MoveRight();
+        
         if (Input.GetKey(KeyCode.DownArrow))
             Agachar();
         else
@@ -38,9 +40,12 @@ public class Player : MonoBehaviour
             transform.localScale = scale;
             if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
                 Jump();
-
             if (Input.GetKeyDown(KeyCode.Space) & Time.time - balaTime >= 1)
                 Attack();
+            if (Input.GetKey(KeyCode.LeftArrow))
+                MoveLeft();
+            if (Input.GetKey(KeyCode.RightArrow))
+                MoveRight();
         }
         if (hitCount >= vida)
             Destroy(gameObject);
@@ -79,7 +84,6 @@ public class Player : MonoBehaviour
     {
         //ir para haddad
         mov = true;
-        
         transform.position += Vector3.left* vel * Time.deltaTime;
     }
     public void Jump()
@@ -89,10 +93,10 @@ public class Player : MonoBehaviour
     }
     public void Agachar()
     {
-        
         //eu quero ir pra frente
-
-        transform.localScale = scale /2;
+        agc = true;
+        //transform.localScale = scale /2;
+        
     }
     public void Attack()
     {
