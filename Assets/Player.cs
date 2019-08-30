@@ -3,43 +3,79 @@
 public class Player : MonoBehaviour
 {
     private Rigidbody2D heroi;
+    public int vel = 3;
+    public bool mov = false;
+    public GameObject bullet;
+
+    Vector3 scale;
+    bool isGround = false;
     private void Start()
     {
         heroi = GetComponent<Rigidbody2D>();
+        scale = transform.localScale;
     }
+    
     public void Update()
     {
+        mov = false;
         if (Input.GetKey(KeyCode.LeftArrow))
             MoveLeft();
         if (Input.GetKey(KeyCode.RightArrow))
             MoveRight();
-        if (Input.GetKeyDown(KeyCode.UpArrow) & transform.position.y< -3.2)
-            Jump();
+        if (Input.GetKey(KeyCode.DownArrow))
+            Agachar();
+        else
+        {
+            transform.localScale = scale;
+            if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
+                Jump();
+        }
         if (Input.GetKeyDown(KeyCode.Space))
             Attack();
     }
 
-    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGround = true;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Ground")
+        {
+            isGround = false;
+        }
+    }
 
     public void MoveRight()
     {
         //ir para bolsonaro
-        transform.position += Vector3.right * 3 * Time.deltaTime;
+        mov = true;
+        transform.position += Vector3.right * vel * Time.deltaTime;
     }
     public void MoveLeft()
     {
         //ir para haddad
-        transform.position += Vector3.left*3*Time.deltaTime;
+        mov = true;
+        transform.position += Vector3.left* vel * Time.deltaTime;
     }
     public void Jump()
     {
         //eu quero ir pra frente
         heroi.AddForce(new Vector3(0,1,0) * 250);
-    
+    }
+    public void Agachar()
+    {
         
+        //eu quero ir pra frente
+        transform.localScale = scale /2;
     }
     public void Attack()
     {
-        //ataca
+        //atack
+        Instantiate(bullet, transform.position, Quaternion.identity);
+
     }
 }
