@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bala : MonoBehaviour
 {
-    public int vel_bala = 8;
+    public int vel_bala = 12;
 
     float startTime;
     private void Start()
