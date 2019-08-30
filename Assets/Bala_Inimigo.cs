@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bala_Inimigo : MonoBehaviour
 {
-    public int vel_bala = 8;
+    public int vel_bala = 12;
 
     float startTime;
     private void Start()
@@ -20,7 +20,7 @@ public class Bala_Inimigo : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "nimigo")
+        if (collision.gameObject.tag == "Player")
             Destroy(gameObject);
     }
 }
