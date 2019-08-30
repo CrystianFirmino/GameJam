@@ -85,6 +85,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6183065907259212563, guid: 6cc2c601b77c6534e8d12d3381f0a915,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6183065907259212563, guid: 6cc2c601b77c6534e8d12d3381f0a915,
+        type: 3}
+      propertyPath: m_UsedByEffector
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6183065907259212562, guid: 6cc2c601b77c6534e8d12d3381f0a915,
         type: 3}
       propertyPath: vel_bala
