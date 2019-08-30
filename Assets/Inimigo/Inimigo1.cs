@@ -9,16 +9,23 @@ public class Inimigo1 : MonoBehaviour
     public GameObject bullet;
     public GameObject player;
 
+    public Gera_inimigos gera;
     int hitCount = 0;
 
     float balaTime;
 
     void Update()
     {
+        if (player == null)
+        {
+            return;
+        }
+
         if (transform.position.x - player.transform.position.x < 20)
         {
             if (hitCount >= vida)
-                Destroy(gameObject);
+                Morrer();
+
             if (Random.Range(0, freqTiros) == 2 & Time.time - balaTime >= 1)
                 AttackL();
             else if (Random.Range(0, freqTiros) == 4 & Time.time - balaTime >= 1)
@@ -45,5 +52,10 @@ public class Inimigo1 : MonoBehaviour
         //atack
         Instantiate(bullet, transform.position + (Vector3.left) + (Vector3.up * 4 / 6), Quaternion.identity);
         balaTime = Time.time;
+    }
+    private void Morrer()
+    {
+        gera.qnt_Inimigos1 += 1;
+        Destroy(gameObject);
     }
 }

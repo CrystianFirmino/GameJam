@@ -14,14 +14,18 @@ public class Player : MonoBehaviour
 
     Vector3 scale;
     bool isGround = false;
+
+    private Animator anin;
     private void Start()
     {
         heroi = GetComponent<Rigidbody2D>();
         scale = transform.localScale;
+        anin = GetComponent<Animator>();
     }
     
     public void Update()
     {
+        anin.SetBool("mov", mov);
         mov = false;
         if (Input.GetKey(KeyCode.LeftArrow))
             MoveLeft();
@@ -75,6 +79,7 @@ public class Player : MonoBehaviour
     {
         //ir para haddad
         mov = true;
+        
         transform.position += Vector3.left* vel * Time.deltaTime;
     }
     public void Jump()

@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2724af5063d965848ae4db1bebffe764, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vel: 1
-  vida: 3
+  vel: 5
+  vida: 2
+  gera: {fileID: 0}
   player: {fileID: 5711698955946068367, guid: b5d703414bcf4c14fa2814769ba6665e, type: 3}

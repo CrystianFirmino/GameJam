@@ -29,6 +29,7 @@ public class Gera_inimigos : MonoBehaviour
     {
         GameObject newEnemy = Instantiate(inimigo1, Player.transform.position +  Vector3.right*20 + Vector3.right * Random.Range(0,20), Quaternion.identity);
         newEnemy.GetComponent<Inimigo1>().player = Player;
+        newEnemy.GetComponent<Inimigo1>().gera = this;
         qnt_Inimigos1 = qnt_Inimigos1 - 1;
     }
 

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Inimigo2 : MonoBehaviour
 {
-    public int vel = 1;
-    public int vida = 3;
+    public int vel = 5;
+    public int vida = 2;
 
     public Gera_inimigos gera;
     int hitCount = 0;
@@ -34,18 +34,14 @@ public class Inimigo2 : MonoBehaviour
             transform.position += Vector3.left * vel * Time.deltaTime;
         }
 
-       // if (Time.time - startTime >= 20) //Mudar para quando sair da tela
-       //     Destroy(gameObject);
-
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Bala")
-        {
             hitCount += 1;
-        }
+
         if (collision.gameObject.tag == "Player")
-            Destroy(gameObject);
+            Morrer();
     }
 
     private void Morrer()
