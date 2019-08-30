@@ -42,5 +42,6 @@ public class Arquiinimigo : MonoBehaviour
         //atack
         Instantiate(bullet, transform.position + (Vector3.left) + (Vector3.up), Quaternion.identity);
         balaTime = Time.time;
+
     }
 }

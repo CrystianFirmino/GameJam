@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public int vel = 3;
     public bool mov = false;
     public GameObject bullet;
+    public int force = 320;
 
     int hitCount = 0;
 
@@ -75,7 +76,7 @@ public class Player : MonoBehaviour
     public void Jump()
     {
         //eu quero ir pra frente
-        heroi.AddForce(new Vector3(0,1,0) * 250);
+        heroi.AddForce(new Vector3(0,1,0) * force);
     }
     public void Agachar()
     {
