@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
     public void Attack()
     {
         //atack
-        Instantiate(bullet, transform.position, Quaternion.identity);
+        Instantiate(bullet, transform.position + (Vector3.right), Quaternion.identity);
 
     }
 }
