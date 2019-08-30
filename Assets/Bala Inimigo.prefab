@@ -1,5 +1,17 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8943302372620647280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 457771864829629488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a12a80f99e6d70643a13338ae4c27c13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6022716482299172645
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10,7 +22,7 @@ PrefabInstance:
     - target: {fileID: 6183065907259212565, guid: 6cc2c601b77c6534e8d12d3381f0a915,
         type: 3}
       propertyPath: m_Name
-      value: Bala
+      value: Bala Inimigo
       objectReference: {fileID: 0}
     - target: {fileID: 6183065907259212561, guid: 6cc2c601b77c6534e8d12d3381f0a915,
         type: 3}
@@ -69,3 +81,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6cc2c601b77c6534e8d12d3381f0a915, type: 3}
+--- !u!1 &457771864829629488 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6183065907259212565, guid: 6cc2c601b77c6534e8d12d3381f0a915,
+    type: 3}
+  m_PrefabInstance: {fileID: 6022716482299172645}
+  m_PrefabAsset: {fileID: 0}

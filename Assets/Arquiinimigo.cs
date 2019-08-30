@@ -7,24 +7,35 @@ using UnityEngine;
 public class Arquiinimigo : MonoBehaviour
 {
     int count = 0;
-    // Start is called before the first frame update
+
+    float balaTime;
+    public GameObject bullet;
+
     void Start()
     {
-        
+
     }
 
-// Update is called once per frame
-void Update()
-{
-    if (count >= 3)
-        Destroy(gameObject);
-}
-
-private void OnCollisionEnter2D(Collision2D collision)
-{
-    if (collision.gameObject.tag == "Bala")
+    void Update()
     {
-        count += 1;
+        if (count >= 3)
+            Destroy(gameObject);
+        if (Random.Range(0, 100) == 2 & Time.time - balaTime >= 1 / 2)
+            Attack();
     }
-}
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bala")
+        {
+            count += 1;
+        }
+    }
+
+    public void Attack()
+    {
+        //atack
+        Instantiate(bullet, transform.position + (Vector3.left), Quaternion.identity);
+        balaTime = Time.time;
+    }
 }
