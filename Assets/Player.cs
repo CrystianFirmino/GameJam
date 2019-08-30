@@ -2,14 +2,11 @@
 
 public class Player : MonoBehaviour
 {
-    public int vida = 5;
     float balaTime;
     private Rigidbody2D heroi;
     public int vel = 3;
     public bool mov = false;
     public GameObject bullet;
-
-    int hitCount = 0;
 
     Vector3 scale;
     bool isGround = false;
@@ -37,8 +34,6 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) & Time.time - balaTime >= 1)
                 Attack();
         }
-        if (hitCount >= vida)
-            Destroy(gameObject);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -46,10 +41,6 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGround = true;
-        }
-        if (collision.gameObject.tag == "Balainimiga")
-        {
-            hitCount += 1;
         }
     }
     private void OnCollisionExit2D(Collision2D collision)

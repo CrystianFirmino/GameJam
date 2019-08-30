@@ -6,41 +6,32 @@ using UnityEngine;
 
 public class Arquiinimigo : MonoBehaviour
 {
-    public int vida = 3;
-    public GameObject bullet;
-
-    int hitCount = 0;
+    public int vida = 10;
+    int count = 0;
 
     float balaTime;
+    public GameObject bullet;
 
     void Update()
     {
-        if (hitCount >= vida)
+        if (count >= vida)
             Destroy(gameObject);
-        if (Random.Range(0, 100) == 2 & Time.time - balaTime >= 1)
-            AttackL();
-        else if (Random.Range(0, 100) == 4 & Time.time - balaTime >= 1)
-            AttackH();
+        if (Random.Range(0, 50) == 2 & Time.time - balaTime >= 1 / 2)
+            Attack();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Bala")
         {
-            hitCount += 1;
+            count += 1;
         }
     }
 
-    public void AttackL()
+    public void Attack()
     {
         //atack
-        Instantiate(bullet, transform.position + (Vector3.left) + (Vector3.down* 4/5), Quaternion.identity);
-        balaTime = Time.time;
-    }
-    public void AttackH()
-    {
-        //atack
-        Instantiate(bullet, transform.position + (Vector3.left) + (Vector3.up), Quaternion.identity);
+        Instantiate(bullet, transform.position + (Vector3.left), Quaternion.identity);
         balaTime = Time.time;
     }
 }

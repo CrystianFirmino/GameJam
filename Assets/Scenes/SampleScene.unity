@@ -241,7 +241,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd7547f1e923b2f449c64d46daa9976e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 3
   bullet: {fileID: 457771864829629488, guid: d53337f9988832b44bad4b65f05bc0d0, type: 3}
 --- !u!1001 &3934386768925461850
 PrefabInstance:
@@ -329,11 +328,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 4091840083454238021, guid: b5d703414bcf4c14fa2814769ba6665e,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     - target: {fileID: 4091840083454238027, guid: b5d703414bcf4c14fa2814769ba6665e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -416,7 +410,7 @@ PrefabInstance:
     - target: {fileID: 8602405459947817888, guid: 85c5c29ed1121d54c81117eadb9d0502,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.1
+      value: -1.091052
       objectReference: {fileID: 0}
     - target: {fileID: 8602405459947817888, guid: 85c5c29ed1121d54c81117eadb9d0502,
         type: 3}
@@ -457,16 +451,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8602405459947817888, guid: 85c5c29ed1121d54c81117eadb9d0502,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8602405459947817890, guid: 85c5c29ed1121d54c81117eadb9d0502,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85c5c29ed1121d54c81117eadb9d0502, type: 3}

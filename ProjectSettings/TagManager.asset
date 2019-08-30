@@ -7,7 +7,6 @@ TagManager:
   - Ground
   - Bala
   - nimigo
-  - Balainimiga
   layers:
   - Default
   - TransparentFX
