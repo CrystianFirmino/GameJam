@@ -2,6 +2,7 @@
 
 public class Player : MonoBehaviour
 {
+    float balaTime;
     private Rigidbody2D heroi;
     public int vel = 3;
     public bool mov = false;
@@ -29,9 +30,10 @@ public class Player : MonoBehaviour
             transform.localScale = scale;
             if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
                 Jump();
+
+            if (Input.GetKeyDown(KeyCode.Space) & Time.time - balaTime >= 1)
+                Attack();
         }
-        if (Input.GetKeyDown(KeyCode.Space))
-            Attack();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -76,6 +78,6 @@ public class Player : MonoBehaviour
     {
         //atack
         Instantiate(bullet, transform.position + (Vector3.right), Quaternion.identity);
-
+        balaTime = Time.time;
     }
 }
