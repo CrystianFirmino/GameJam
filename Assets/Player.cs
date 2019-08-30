@@ -52,6 +52,10 @@ public class Player : MonoBehaviour
         {
             hitCount += 1;
         }
+        if (collision.gameObject.tag == "nimigo")
+        {
+            hitCount += 5;
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {

@@ -8,7 +8,7 @@ public class Arquiinimigo : MonoBehaviour
 {
     public int vida = 3;
     public GameObject bullet;
-
+    public GameObject guardinha;
     int hitCount = 0;
 
     float balaTime;
@@ -21,6 +21,8 @@ public class Arquiinimigo : MonoBehaviour
             AttackL();
         else if (Random.Range(0, 100) == 4 & Time.time - balaTime >= 1)
             AttackH();
+        if (Random.Range(0, 100) == 2 & Time.time - balaTime >= 1)
+        Instantiate(guardinha, transform.position + (Vector3.left), Quaternion.identity);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Guardinha : MonoBehaviour
 {
-    public int vel = 4;
+    public int vel = 1;
 
     float startTime;
     private void Start()
