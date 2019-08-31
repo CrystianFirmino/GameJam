@@ -41,20 +41,21 @@ public class Inimigo2 : MonoBehaviour
         {
             if (hitCount >= vida)
                 Morrer();
-        }
 
-        float tempDir = transform.position.x - player.transform.position.x < 0 ? -1 : 1;
-        if (tempDir != dir)
-        {
-            timer = cooldown;
+
+            float tempDir = transform.position.x - player.transform.position.x < 0 ? -1 : 1;
+            if (tempDir != dir)
+            {
+                timer = cooldown;
+            }
+            dir = tempDir;
+            if (timer <= 0f)
+            {
+                transform.position += Vector3.left * vel * Time.deltaTime * dir;
+                renderer.flipX = dir == -1;
+            }
+            timer -= Time.deltaTime;
         }
-        dir = tempDir;
-        if (timer <= 0f)
-        {
-            transform.position += Vector3.left * vel * Time.deltaTime * dir;
-            renderer.flipX = dir == -1;
-        }
-        timer -= Time.deltaTime;
     }
 
     //IEnumerator segue()

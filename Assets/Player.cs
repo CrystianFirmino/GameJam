@@ -2,7 +2,7 @@
 
 public class Player : MonoBehaviour
 {
-    private int vida = 5123123;
+    private int vida = 5;
     float balaTime;
     private Rigidbody2D heroi;
     private SpriteRenderer renderer;

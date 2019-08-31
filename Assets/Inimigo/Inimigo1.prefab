@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10a1ae7044bf48d428dc6d532bd36e16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 30
+  vida: 12
   freqTiros: 100
   bullet: {fileID: 457771864829629488, guid: d53337f9988832b44bad4b65f05bc0d0, type: 3}
   player: {fileID: 5711698955946068367, guid: b5d703414bcf4c14fa2814769ba6665e, type: 3}

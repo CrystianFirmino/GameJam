@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vel: 5
-  vida: 20
+  vida: 6
   gera: {fileID: 0}
   player: {fileID: 5711698955946068367, guid: b5d703414bcf4c14fa2814769ba6665e, type: 3}
   cooldown: 1.5
