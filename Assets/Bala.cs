@@ -10,6 +10,7 @@ public class Bala : MonoBehaviour
 
     public void Initialize(int dir)
     {
+        GetComponent<AudioSource>().Play();
         vel_bala = vel_bala * dir;
     }
 

@@ -71,7 +71,8 @@ public class Player : MonoBehaviour
                 MoveRight();
         }
         if (hitCount >= vida)
-            SceneManager.LoadScene(1) ;
+            SceneManager.LoadScene(6);
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -87,6 +88,10 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "nimigo")
         {
             hitCount += 1;
+        }
+        if (collision.gameObject.tag == "Finish")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
     private void OnCollisionExit2D(Collision2D collision)
