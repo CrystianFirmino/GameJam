@@ -37,7 +37,7 @@ public class Inimigo2 : MonoBehaviour
             return;
         }
 
-        if (transform.position.x - player.transform.position.x < 20)
+        if (transform.position.x - player.transform.position.x < 30)
         {
             if (hitCount >= vida)
                 Morrer();

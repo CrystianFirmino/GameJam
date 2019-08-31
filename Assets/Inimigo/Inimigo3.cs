@@ -2,14 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inimigo1 : MonoBehaviour
+public class Inimigo3 : MonoBehaviour
 {
-    public int vida = 30;
+    public int vida = 12;
     public int freqTiros = 100;
     public GameObject bullet;
     public GameObject player;
-
-    public Gera_inimigos gera;
+    
     int hitCount = 0;
 
     float balaTime;
@@ -21,8 +20,8 @@ public class Inimigo1 : MonoBehaviour
             return;
         }
 
-       // if (transform.position.x - player.transform.position.x < 20)
-        //{
+        if (transform.position.x - player.transform.position.x < 20)
+        {
             if (hitCount >= vida)
                 Morrer();
 
@@ -30,12 +29,12 @@ public class Inimigo1 : MonoBehaviour
                 AttackL();
             else if (Random.Range(0, freqTiros) == 4 & Time.time - balaTime >= 1)
                 AttackH();
-        //}
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Bala")
+        if (collision.gameObject.tag == "Bala" && transform.position.x - player.transform.position.x < 20)
         {
             hitCount += 1;
         }
@@ -44,18 +43,17 @@ public class Inimigo1 : MonoBehaviour
     public void AttackL()
     {
         //atack
-        Instantiate(bullet, transform.position + (Vector3.left) + (Vector3.down * 4 / 6), Quaternion.identity);
+        Instantiate(bullet, transform.position + (Vector3.left) + (Vector3.down * 4 / 3), Quaternion.identity);
         balaTime = Time.time;
     }
     public void AttackH()
     {
         //atack
-        Instantiate(bullet, transform.position + (Vector3.left) + (Vector3.up * 4 / 6), Quaternion.identity);
+        Instantiate(bullet, transform.position + (Vector3.left) + (Vector3.up * 1 / 7), Quaternion.identity);
         balaTime = Time.time;
     }
     private void Morrer()
     {
-        gera.qnt_Inimigos1 += 1;
         Destroy(gameObject);
     }
 }

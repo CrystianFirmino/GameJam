@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -13,7 +14,8 @@ public class Player : MonoBehaviour
     public bool pol = false; //<-------------- Pulando
     public bool ati = false; //<-------------- Atirando
     public GameObject bullet;
-    private int force = 420;
+    private int force = 540;
+
 
     int hitCount = 0;
 
@@ -69,7 +71,7 @@ public class Player : MonoBehaviour
                 MoveRight();
         }
         if (hitCount >= vida)
-            Destroy(gameObject);
+            SceneManager.LoadScene(1) ;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
