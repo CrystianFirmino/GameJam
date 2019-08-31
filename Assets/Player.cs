@@ -2,27 +2,31 @@
 
 public class Player : MonoBehaviour
 {
-    public int vida = 5;
+    private int vida = 5123123;
     float balaTime;
     private Rigidbody2D heroi;
-    //private BoxCollider2D col;
+    private SpriteRenderer renderer;
+    public Collider2D col;
     public int vel = 3;
     public bool mov = false; //<-------------- Movimento
     public bool agc = false; //<-------------- Agachado
     public bool pol = false; //<-------------- Pulando
+    public bool ati = false; //<-------------- Atirando
     public GameObject bullet;
-    public int force = 320;
+    private int force = 420;
 
     int hitCount = 0;
 
     Vector3 scale;
     bool isGround = false;
+    public int direcao = 1;
 
     private Animator anin; //<--------------
     private void Start()
     {
         heroi = GetComponent<Rigidbody2D>();
-        //col = GetComponent<BoxCollider2D>();
+        renderer = GetComponent<SpriteRenderer>();
+
         scale = transform.localScale;
         anin = GetComponent<Animator>();//<--------------
     }
@@ -32,23 +36,35 @@ public class Player : MonoBehaviour
         anin.SetBool("mov", mov); //<--------------
         anin.SetBool("agc", agc); //<--------------
         anin.SetBool("pul", pol); //<--------------
+        anin.SetBool("ati", ati); //<--------------
         agc = false; //<--------------
         mov = false; //<--------------
         pol = false; //<--------------
+        ati = false; //<--------------
+        
 
-        if (Input.GetKey(KeyCode.DownArrow))
+        if (Input.GetKey(KeyCode.DownArrow) && isGround)
             Agachar();
         else
         {
+            col.enabled = true;
             transform.localScale = scale;
+
             if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
                 Jump();
+
             if(!isGround)
                 pol = true;
-            if (Input.GetKeyDown(KeyCode.Space) & Time.time - balaTime >= 1)
-                Attack();
+
+            if (Input.GetKeyDown(KeyCode.X) & Time.time - balaTime >= 0.05f)
+                AttackRight();
+            
+            if (Input.GetKeyDown(KeyCode.Z) & Time.time - balaTime >= 0.05f)
+                AttackLeft();
+
             if (Input.GetKey(KeyCode.LeftArrow))
                 MoveLeft();
+
             if (Input.GetKey(KeyCode.RightArrow))
                 MoveRight();
         }
@@ -84,12 +100,15 @@ public class Player : MonoBehaviour
         //ir para bolsonaro
         mov = true; //<--------------
         transform.position += Vector3.right * vel * Time.deltaTime;
+        direcao = 1;
+
     }
     public void MoveLeft()
     {
         //ir para haddad
         mov = true; //<--------------
         transform.position += Vector3.left* vel * Time.deltaTime;
+        direcao = -1;
     }
     public void Jump()
     {
@@ -101,16 +120,37 @@ public class Player : MonoBehaviour
     {
         //eu quero ir pra frente
         agc = true; //<--------------
-
-        //Falta diminuir a Box Collider
+        col.enabled = false;
+        
 
         //transform.localScale = scale /2;
 
     }
-    public void Attack()
+    public void AttackRight()
+    {
+
+        //atack
+        direcao = 1;
+        GameObject newBala = Instantiate(bullet, transform.position + (Vector3.right), Quaternion.identity);
+        newBala.GetComponent<Bala>().Initialize(direcao);
+
+        renderer.flipX = false;
+         
+        balaTime = Time.time;
+        anin.ResetTrigger("sho");
+        anin.SetTrigger("sho");
+    }
+    public void AttackLeft()
     {
         //atack
-        Instantiate(bullet, transform.position + (Vector3.right), Quaternion.identity);
+        direcao = -1;
+        GameObject newBala = Instantiate(bullet, transform.position + (Vector3.left), Quaternion.identity);
+        newBala.GetComponent<Bala>().Initialize(direcao);
+
+        renderer.flipX = true;
+
         balaTime = Time.time;
+        anin.ResetTrigger("sho");
+        anin.SetTrigger("sho");
     }
 }

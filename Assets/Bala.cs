@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class Bala : MonoBehaviour
 {
-    public int vel_bala = 12;
+    public int vel_bala = 22;
 
     float destroyTime = 10;
+
+    public void Initialize(int dir)
+    {
+        vel_bala = vel_bala * dir;
+    }
+
     private void Start()
     {
         Destroy(gameObject, destroyTime);
     }
     void Update()
     {
+        
         transform.position += Vector3.right * vel_bala * Time.deltaTime;
 
     }
@@ -20,9 +27,5 @@ public class Bala : MonoBehaviour
     {
         if (collision.gameObject.tag == "nimigo")
             Destroy(gameObject);
-    }
-    public void SetDirection(int dir)
-    {
-        vel_bala = vel_bala * dir;
     }
 }

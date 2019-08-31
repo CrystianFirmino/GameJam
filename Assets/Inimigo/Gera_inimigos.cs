@@ -12,18 +12,10 @@ public class Gera_inimigos : MonoBehaviour
 
     void Start()
     {
-        
-    }
-
-    void Update()
-    {
-
-
         while (qnt_Inimigos1 > 0)
             create_Inimigo1();
         while (qnt_Inimigos2 > 0)
             create_Inimigo2();
-
     }
     private void create_Inimigo1()
     {
@@ -33,7 +25,7 @@ public class Gera_inimigos : MonoBehaviour
         qnt_Inimigos1 = qnt_Inimigos1 - 1;
     }
 
-    private void create_Inimigo2()
+    public void create_Inimigo2()
     {
         GameObject newEnemy = Instantiate(inimigo2, Player.transform.position +  Vector3.right * 20 + Vector3.right * Random.Range(0, 20), Quaternion.identity);
         newEnemy.GetComponent<Inimigo2>().player = Player;

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inimigo1 : MonoBehaviour
 {
-    public int vida = 3;
+    public int vida = 30;
     public int freqTiros = 100;
     public GameObject bullet;
     public GameObject player;
