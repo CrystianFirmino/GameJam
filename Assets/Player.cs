@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public bool ati = false; //<-------------- Atirando
     public GameObject bullet;
     private int force = 540;
-
+    public HealthBar healthBar;
 
     int hitCount = 0;
 
@@ -75,6 +75,12 @@ public class Player : MonoBehaviour
         
     }
 
+    private void Damage()
+    {
+        healthBar.TakeDamage(hitCount);
+        hitCount += 1;
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Ground")
@@ -83,16 +89,18 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.tag == "Balainimiga")
         {
-            hitCount += 1;
+            Damage();
         }
         if (collision.gameObject.tag == "nimigo")
         {
-            hitCount += 1;
+            print("kjhjk");
+            Damage();
         }
         if (collision.gameObject.tag == "Finish")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
@@ -135,7 +143,6 @@ public class Player : MonoBehaviour
     }
     public void AttackRight()
     {
-
         //atack
         direcao = 1;
         GameObject newBala = Instantiate(bullet, transform.position + (Vector3.right), Quaternion.identity);
