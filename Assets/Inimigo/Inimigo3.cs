@@ -6,6 +6,7 @@ public class Inimigo3 : MonoBehaviour
 {
     public int vida = 12;
     public int freqTiros = 100;
+    public GameObject nimigo;
     public GameObject bullet;
     public GameObject player;
     
@@ -54,6 +55,6 @@ public class Inimigo3 : MonoBehaviour
     }
     private void Morrer()
     {
-        Destroy(gameObject);
+        Destroy(nimigo);
     }
 }

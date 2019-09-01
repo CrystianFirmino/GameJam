@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7475898355626440273}
   - component: {fileID: 7475898355626440278}
   m_Layer: 0
-  m_Name: viking_andando_1 (1)
+  m_Name: Vida 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 7475898355940071312}
   - component: {fileID: 7475898355940071313}
   m_Layer: 0
-  m_Name: viking_andando_1 (2)
+  m_Name: Vida 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -294,7 +294,7 @@ GameObject:
   - component: {fileID: 7475898356771966558}
   - component: {fileID: 7475898356771966559}
   m_Layer: 0
-  m_Name: viking_andando_1 (3)
+  m_Name: Vida 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 7475898357091843888}
   - component: {fileID: 7475898357091843889}
   m_Layer: 0
-  m_Name: viking_andando_1
+  m_Name: Vida 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 7475898357426743838}
   - component: {fileID: 7475898357426743839}
   m_Layer: 0
-  m_Name: viking_andando_1 (4)
+  m_Name: Vida 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

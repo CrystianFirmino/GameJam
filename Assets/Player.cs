@@ -55,7 +55,10 @@ public class Player : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow) && isGround)
                 Jump();
 
-            if(!isGround)
+            if (Input.GetKey(KeyCode.DownArrow))
+                MoveDown();
+
+            if (!isGround)
                 pol = true;
 
             if (Input.GetKeyDown(KeyCode.X) & Time.time - balaTime >= 0.05f)
@@ -93,7 +96,6 @@ public class Player : MonoBehaviour
         }
         if (collision.gameObject.tag == "nimigo")
         {
-            print("kjhjk");
             Damage();
         }
         if (collision.gameObject.tag == "Finish")
@@ -130,6 +132,12 @@ public class Player : MonoBehaviour
         //eu quero ir pra frente
         
         heroi.AddForce(new Vector3(0,1,0) * force);
+    }
+    public void MoveDown()
+    {
+        //eu quero ir pra frente
+
+        heroi.AddForce(new Vector3(0, -1, 0) * force/50);
     }
     public void Agachar()
     {

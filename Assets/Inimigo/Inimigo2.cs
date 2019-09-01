@@ -99,7 +99,6 @@ public class Inimigo2 : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            print("BATEU");
             Morrer();
         }
             //Morrer();

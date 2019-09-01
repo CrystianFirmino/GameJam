@@ -10,7 +10,7 @@ public class Parralax : MonoBehaviour
 
     void Start()
     {
-        if (velocidadeRelativa < 1)
+        if (velocidadeRelativa == 0)
             velocidadeRelativa = 1;
 
         posAntX = alvo.position.x;
@@ -26,7 +26,5 @@ public class Parralax : MonoBehaviour
     void Update()
     {
         EfeitoParallax();
-
-
     }
 }

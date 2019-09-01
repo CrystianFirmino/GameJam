@@ -614,9 +614,9 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 558bcf51-eef3-4930-8b43-35ec044c0664
+  cloudProjectId: baa9ce11-346d-4a48-8b63-473577e01b58
   framebufferDepthMemorylessMode: 0
-  projectName: GameJam
+  projectName: GameJam (1)
   organizationId: bdcc010-a0a3-4a7b-97e7-2322d7ee2f92
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
