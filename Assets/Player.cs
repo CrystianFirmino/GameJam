@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     private int vida = 5;
     float balaTime;
     private Rigidbody2D heroi;
-    private SpriteRenderer renderer;
+    private new SpriteRenderer renderer;
     public Collider2D col;
     public int vel = 3;
     public bool mov = false; //<-------------- Movimento
@@ -131,13 +131,11 @@ public class Player : MonoBehaviour
     {
         //eu quero ir pra frente
         
-        heroi.AddForce(new Vector3(0,1,0) * force);
+        heroi.AddForce(Vector3.up * force);
     }
     public void MoveDown()
     {
-        //eu quero ir pra frente
-
-        heroi.AddForce(new Vector3(0, -1, 0) * force/50);
+        heroi.AddForce(Vector3.down * force / 50) ;
     }
     public void Agachar()
     {

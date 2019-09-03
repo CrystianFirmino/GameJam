@@ -870,7 +870,7 @@ PrefabInstance:
     - target: {fileID: 8472679530455163753, guid: 5daf81c9d357d944fb95c40556015a38,
         type: 3}
       propertyPath: m_Volume
-      value: 0.702
+      value: 0.8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5daf81c9d357d944fb95c40556015a38, type: 3}
@@ -1300,11 +1300,6 @@ PrefabInstance:
       propertyPath: alvo
       value: 
       objectReference: {fileID: 64650891}
-    - target: {fileID: 6706524502810867653, guid: f93db95f7f7d6be40a7fdfdba3698921,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -27.7
-      objectReference: {fileID: 0}
     - target: {fileID: 6706524502829981434, guid: f93db95f7f7d6be40a7fdfdba3698921,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -1314,6 +1309,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.863
+      objectReference: {fileID: 0}
+    - target: {fileID: 6706524502810867653, guid: f93db95f7f7d6be40a7fdfdba3698921,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -27.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93db95f7f7d6be40a7fdfdba3698921, type: 3}

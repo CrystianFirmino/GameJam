@@ -6,8 +6,8 @@ public class Inimigo2 : MonoBehaviour
 {
     public int vel = 5;
     public int vida = 20;
-
-    private SpriteRenderer renderer;
+    
+    private new SpriteRenderer renderer;
     public Gera_inimigos gera;
     int hitCount = 0;
     
